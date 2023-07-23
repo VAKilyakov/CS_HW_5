@@ -60,6 +60,7 @@ PS D:\Home_Works\CS_HW_5> dotnet run
 [-4, -6, 89, 6] -> 0
 */
 
+/* Решение 2
 int InputNum(string message)
 {
     
@@ -106,3 +107,63 @@ void PrintArrayAndResult(int[] array)
 int Length = InputNum("Введите длину массива ");
 int[] array = GenarateArray(Length);
 PrintArrayAndResult(array);
+*/
+
+/* Тест 2
+PS D:\Home_Works\CS_HW_5> dotnet run
+Введите длину массива  4
+[54,877,-449,-933]-56
+*/
+
+/* Задача 3: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+[3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+*/
+
+/* Решение 3
+double[] CreateArray()
+{
+
+    double[] array = new double[5] {3.22, 4.2, 1.15, 77.15, 65.2};
+
+    return array;
+
+}
+
+double MaxNumber(double[] array)
+{
+    double MaxNumber = array[0];
+    
+    for(int i=1; i < array.Length; i++)
+    {
+       if (MaxNumber < array[i])
+       {
+        MaxNumber = array[i];
+       }
+    }
+
+    return MaxNumber;
+}
+
+double MinNumber (double[] array) 
+{
+    double MinNumber = array[0];
+    
+    for(int i=1; i < array.Length; i++)
+    {
+       if (MinNumber > array[i])
+       {
+        MinNumber = array[i];
+       }
+    }
+
+    return MinNumber;
+}
+
+double[] array = CreateArray();
+ Console.Write("разность между максимальным и минимальным числом массива = " + (MaxNumber(array) - MinNumber(array)));
+*/
+
+/* Тест 3 
+PS D:\Home_Works\CS_HW_5> dotnet run
+разность между максимальным и минимальным числом массива = 76
+*/
